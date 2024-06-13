@@ -22,6 +22,4 @@ COPY audio.mp3 audio.mp3
 COPY Jari2.pth Jari2.pth
 COPY Jari2.index Jari2.index
 
-VOLUME [ "/app/logs/weights", "/app/opt" ]
-
 ENTRYPOINT ["/bin/bash"]

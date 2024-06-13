@@ -1,3 +1,8 @@
+# Build docker container
+'''
+docker build -t rvc_cli .
+'''
+
 # Run docker container
 '''
 docker run --gpus all -it --rm -v "C:\Users\j.hoellerer\Repos\RVC_CLI-1\portal:/app/portal" rvc_cli
