@@ -188,7 +188,7 @@ def run_tts_script(
         os.remove(output_tts_path)
 
     command_tts = [
-        "python",
+        "python3",
         tts_script_path,
         tts_text,
         tts_voice,
@@ -229,7 +229,7 @@ def run_preprocess_script(model_name, dataset_path, sampling_rate, cpu_cores):
     per = 3.0 if config.is_half else 3.7
     preprocess_script_path = os.path.join("rvc", "train", "preprocess", "preprocess.py")
     command = [
-        "python",
+        "python3",
         preprocess_script_path,
         *map(
             str,
@@ -269,7 +269,7 @@ def run_extract_script(
     )
 
     command_1 = [
-        "python",
+        "python3",
         extract_f0_script_path,
         *map(
             str,
@@ -282,7 +282,7 @@ def run_extract_script(
         ),
     ]
     command_2 = [
-        "python",
+        "python3",
         extract_feature_script_path,
         *map(
             str,
@@ -350,7 +350,7 @@ def run_train_script(
 
     train_script_path = os.path.join("rvc", "train", "train.py")
     command = [
-        "python",
+        "python3",
         train_script_path,
         *map(
             str,
@@ -400,7 +400,7 @@ def run_train_script(
 def run_index_script(model_name, rvc_version):
     index_script_path = os.path.join("rvc", "train", "process", "extract_index.py")
     command = [
-        "python",
+        "python3",
         index_script_path,
         os.path.join(logs_path, model_name),
         rvc_version,
