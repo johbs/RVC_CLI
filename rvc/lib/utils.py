@@ -42,8 +42,7 @@ def load_embedding(embedder_model, custom_embedder=None):
     embedder_root = os.path.join(now_dir, "rvc", "embedders")
     embedding_list = {
         "contentvec": os.path.join(embedder_root, "contentvec_base.pt"),
-        "japanese-hubert-base": os.path.join(embedder_root, "japanese-hubert-base.pt"),
-        "chinese-hubert-large": os.path.join(embedder_root, "chinese-hubert-large.pt"),
+        "hubert": os.path.join(embedder_root, "hubert_base.pt"),
     }
 
     online_embedders = {
@@ -54,7 +53,7 @@ def load_embedding(embedder_model, custom_embedder=None):
     if embedder_model == "custom":
         model_path = custom_embedder
         if not custom_embedder and os.path.exists(custom_embedder):
-            model_path = embedding_list["contentvec"]
+            model_path = embedding_list["hubert"]
     else:
         model_path = embedding_list[embedder_model]
         if embedder_model in online_embedders:
@@ -63,7 +62,7 @@ def load_embedding(embedder_model, custom_embedder=None):
             print(f"\nDownloading {url} to {model_path}...")
             wget.download(url, out=model_path)
         else:
-            model_path = embedding_list["contentvec"]
+            model_path = embedding_list["hubert"]
 
     models = checkpoint_utils.load_model_ensemble_and_task(
         [model_path],
