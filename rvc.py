@@ -33,7 +33,7 @@ logs_path = os.path.join(current_script_directory, "logs")
 with open(os.path.join("rvc", "lib", "tools", "tts_voices.json"), "r") as f:
     voices_data = json.load(f)
 
-locales = list({voice["Locale"] for voice in voices_data})
+locales = list({voice["Name"] for voice in voices_data})
 
 
 # Infer
