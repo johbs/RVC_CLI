@@ -593,11 +593,10 @@ def parse_arguments():
         help="Embedder model",
         choices=[
             "contentvec",
-            "japanese-hubert-base",
-            "chinese-hubert-large",
+            "hubert",
             "custom",
         ],
-        default="contentvec",
+        default="hubert",
     )
     infer_parser.add_argument(
         "--embedder_model_custom",
@@ -729,11 +728,10 @@ def parse_arguments():
         help="Embedder model",
         choices=[
             "contentvec",
-            "japanese-hubert-base",
-            "chinese-hubert-large",
+            "hubert",
             "custom",
         ],
-        default="contentvec",
+        default="hubert",
     )
     batch_infer_parser.add_argument(
         "--embedder_model_custom",
@@ -879,11 +877,10 @@ def parse_arguments():
         help="Embedder model",
         choices=[
             "contentvec",
-            "japanese-hubert-base",
-            "chinese-hubert-large",
+            "hubert",
             "custom",
         ],
-        default="contentvec",
+        default="hubert",
     )
     tts_parser.add_argument(
         "--embedder_model_custom",
@@ -982,11 +979,10 @@ def parse_arguments():
         help="Embedder model",
         choices=[
             "contentvec",
-            "japanese-hubert-base",
-            "chinese-hubert-large",
+            "hubert",
             "custom",
         ],
-        default="contentvec",
+        default="hubert",
     )
     extract_parser.add_argument(
         "--embedder_model_custom",
